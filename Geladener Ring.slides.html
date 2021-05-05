@@ -14540,7 +14540,7 @@ scipy</p>
 </div><div class="fragment">
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
-<p>$\Phi=\int_{0}^{R}\int_{0}^{\pi}\int_{0}^{2\pi}\frac{\rho(r')}{4\pi\epsilon_0\cdot|r-r'|}\cdot r'^2\cdot\sin(\theta)d\phi d\theta d r'
+<p>$\Phi=\int_{0}^{R}\int_{0}^{\pi}\int_{0}^{2\pi}\frac{\rho(r')}{4\pi\epsilon_0\cdot|r-r'|}\cdot r'^2\cdot\sin(\theta)\mathrm{d}\varphi \mathrm{d}\theta \mathrm{d} r'
 $</p>
 
 </div>
@@ -14554,7 +14554,7 @@ $</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Es gilt $|r-r'|= \sqrt{r^2+r'^2-2rr'\cos{\theta}}$.</p>
-<p>$\Phi=\frac{2\pi}{4\pi\epsilon_0}\int_{0}^{R}\int_{0}^{\pi}\frac{\rho(r')\cdot r'^2\cdot\sin{\theta}}{\sqrt{r^2+r'^2-2rr'\cos{\theta}}}
+<p>$\Phi=\frac{2\pi}{4\pi\epsilon_0}\int_{0}^{R}\int_{0}^{\pi}\frac{\rho(r')\cdot r'^2\cdot\sin{\theta}}{\sqrt{r^2+r'^2-2rr'\cos{\theta}}}\cdot\mathrm{d}\theta \mathrm{d}r'
 $</p>
 
 </div>
@@ -14563,8 +14563,8 @@ $</p>
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>Durch Substitution mit $\cos\theta$:</p>
 <p>$\Phi=\frac{2\pi}{4\pi\epsilon_0}\int_{0}^{R}\frac{\rho(r')\cdot r'^2}{0.5\cdot 2\cdot r\cdot r'}\cdot 
-\sqrt{r^2+r'^2-2rr'\cos{\theta}}{\Big{|}}_0^\pi$</p>
-<p>$\Phi=\frac{2\pi}{4\pi\epsilon_0}\int_{0}^{R}\frac{\rho(r')\cdot r'^2}{r\cdot r'}\cdot (|r+r'|-|r-r'|)dr'$</p>
+\sqrt{r^2+r'^2-2rr'\cos{\theta}}{\Big{|}}_0^\pi\mathrm{d}r'$</p>
+<p>$\Phi=\frac{2\pi}{4\pi\epsilon_0}\int_{0}^{R}\frac{\rho(r')\cdot r'^2}{r\cdot r'}\cdot (|r+r'|-|r-r'|)\mathrm{d}r'$</p>
 
 </div>
 </div></div></section><section>
@@ -14862,9 +14862,16 @@ $</p>
 <div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
 </div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
 <p>$\mathrm{d}\phi \sim \dfrac{1}{|d|}\mathrm{d}q_\mathrm{ring}$</p>
+<p>$\phi_\mathrm{prop}= \int_{0}^{2\pi} \dfrac{\rho_\mathrm{ring}}{|\vec{r}-\vec{r}'|} \,d\gamma  $</p>
 
 </div>
-</div></div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
+</div></div></section><section>
+<div class="jp-Cell-inputWrapper"><div class="jp-InputPrompt jp-InputArea-prompt">
+</div><div class="jp-RenderedHTMLCommon jp-RenderedMarkdown jp-MarkdownOutput " data-mime-type="text/markdown">
+<p>$\phi_\mathrm{prop}= \int_{0}^{2\pi} \dfrac{\rho_\mathrm{ring}}{ \left|\begin{pmatrix}r \\ 0 \end{pmatrix}-\begin{pmatrix}R \cos(\gamma) \\ R \sin(\gamma) \end{pmatrix}\right|} \mathrm{d}\gamma = \int_{0}^{2\pi} \dfrac{\rho_\mathrm{ring}}{ \left|\sqrt{((r-R\cos{\gamma})^2+(R\sin{\gamma})^2}\right|}\mathrm{d}\gamma $</p>
+
+</div>
+</div><div class="fragment"><div class="jp-Cell jp-CodeCell jp-Notebook-cell jp-mod-noOutputs  ">
 <div class="jp-Cell-inputWrapper">
 <div class="jp-InputArea jp-Cell-inputArea">
 <div class="jp-InputPrompt jp-InputArea-prompt">In&nbsp;[371]:</div>
